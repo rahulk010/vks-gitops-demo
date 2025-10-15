@@ -40,3 +40,4 @@ pipeline:
                     repo: design-libraries
                     tags:
                       - <+pipeline.executionId>
+                    dockerfile: ./microservices-demo/src/adservice/Dockerfile
