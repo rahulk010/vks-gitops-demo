@@ -41,3 +41,4 @@ pipeline:
                     tags:
                       - <+pipeline.executionId>
                     dockerfile: ./microservices-demo/src/adservice/Dockerfile
+                    context: ./microservices-demo/src/adservice/
