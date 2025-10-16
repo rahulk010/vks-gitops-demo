@@ -37,8 +37,8 @@ pipeline:
                   identifier: BuildAndPushDockerRegistry_1
                   spec:
                     connectorRef: dockerregistryconnector
-                    repo: mylesg655/design-libraries/adservice
+                    repo: mylesg655/design-libraries
                     tags:
-                      - <+pipeline.executionId>
+                      - adservice:<+pipeline.executionId>
                     dockerfile: ./microservices-demo/src/adservice/Dockerfile
                     context: ./microservices-demo/src/adservice/
