@@ -39,6 +39,21 @@ pipeline:
                     connectorRef: dockerregistryconnector
                     repo: mylesg655/design-libraries
                     tags:
-                      - adservice-<+pipeline.executionId>
-                    dockerfile: ./microservices-demo/src/adservice/Dockerfile
-                    context: ./microservices-demo/src/adservice/
+                      - <+matrix.services>-<+pipeline.executionId>
+                    dockerfile: ./microservices-demo/src/<+matrix.services>Dockerfile
+                    context: ./microservices-demo/src/<+matrix.services>/
+                  strategy:
+                    matrix:
+                      services:
+                        - adservice: null
+                        - cartservice: null
+                        - checkoutservice: null
+                        - currencyservice: null
+                        - emailservice: null
+                        - frontend: null
+                        - loadgenerator: null
+                        - paymentservice: null
+                        - productcatalogservice: null
+                        - recommendationservice: null
+                        - shippingservice: null
+                        - shoppingassistantservice: null
