@@ -39,22 +39,22 @@ pipeline:
                     connectorRef: dockerregistryconnector
                     repo: mylesg655/design-libraries
                     tags:
-                      - <+matrix.services>-<+pipeline.executionId>
-                    dockerfile: ./microservices-demo/src/<+matrix.services>Dockerfile
-                    context: ./microservices-demo/src/<+matrix.services>/
+                      - <+matrix.service>-<+pipeline.executionId>
+                    dockerfile: ./microservices-demo/src/<+matrix.service>Dockerfile
+                    context: ./microservices-demo/src/<+matrix.service>/
                   strategy:
                     matrix:
                       maxConcurrency: 5
                       service:
-                        - adservice: null
-                        - cartservice: null
-                        - checkoutservice: null
-                        - currencyservice: null
-                        - emailservice: null
-                        - frontend: null
-                        - loadgenerator: null
-                        - paymentservice: null
-                        - productcatalogservice: null
-                        - recommendationservice: null
-                        - shippingservice: null
-                        - shoppingassistantservice: null
+                        - {}
+                        - {}
+                        - {}
+                        - {}
+                        - {}
+                        - {}
+                        - {}
+                        - {}
+                        - {}
+                        - {}
+                        - {}
+                        - {}
