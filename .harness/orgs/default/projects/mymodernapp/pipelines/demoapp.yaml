@@ -44,7 +44,7 @@ pipeline:
                     context: ./microservices-demo/src/<+matrix.services>/
                   strategy:
                     matrix:
-                      maxConcurrency: 5
+                      maxConcurrency: 2
                       services:
                         - adservice: null
                         - cartservice: null
