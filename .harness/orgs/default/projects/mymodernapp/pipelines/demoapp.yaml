@@ -39,6 +39,6 @@ pipeline:
                     connectorRef: dockerregistryconnector
                     repo: mylesg655/design-libraries
                     tags:
-                      - adservice:<+pipeline.executionId>
+                      - adservice-<+pipeline.executionId>
                     dockerfile: ./microservices-demo/src/adservice/Dockerfile
                     context: ./microservices-demo/src/adservice/
