@@ -52,5 +52,5 @@ pipeline:
                         repo: mylesg655/design-libraries
                         tags:
                           - cartservice<+pipeline.executionId>
-                        dockerfile: /microservices-demo/src/cartservice/src/Dockerfile
+                        dockerfile: ./microservices-demo/src/cartservice/src/Dockerfile
                         context: ./microservices-demo/src/cartservice/src/
