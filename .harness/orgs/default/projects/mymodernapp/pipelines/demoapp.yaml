@@ -31,30 +31,26 @@ pipeline:
             spec: {}
           execution:
             steps:
-              - step:
-                  type: BuildAndPushDockerRegistry
-                  name: BuildAndPushDockerRegistry_1
-                  identifier: BuildAndPushDockerRegistry_1
-                  spec:
-                    connectorRef: dockerregistryconnector
-                    repo: mylesg655/design-libraries
-                    tags:
-                      - <+matrix.service>-<+pipeline.executionId>
-                    dockerfile: ./microservices-demo/src/<+matrix.service>/Dockerfile
-                    context: ./microservices-demo/src/<+matrix.service>/
-                  strategy:
-                    matrix:
-                      maxConcurrency: 5
-                      service:
-                        - adservice: null
-                        - cartservice: null
-                        - checkoutservice: null
-                        - currencyservice: null
-                        - emailservice: null
-                        - frontend: null
-                        - loadgenerator: null
-                        - paymentservice: null
-                        - productcatalogservice: null
-                        - recommendationservice: null
-                        - shippingservice: null
-                        - shoppingassistantservice: null
+              - parallel:
+                  - step:
+                      type: BuildAndPushDockerRegistry
+                      name: BuildAndPushDockerRegistry_1
+                      identifier: BuildAndPushDockerRegistry_1
+                      spec:
+                        connectorRef: dockerregistryconnector
+                        repo: mylesg655/design-libraries
+                        tags:
+                          - adservice<+pipeline.executionId>
+                        dockerfile: ./microservices-demo/src/adservice/Dockerfile
+                        context: ./microservices-demo/src/adservice/
+                  - step:
+                      type: BuildAndPushDockerRegistry
+                      name: BuildAndPushDockerRegistry_2
+                      identifier: BuildAndPushDockerRegistry_2
+                      spec:
+                        connectorRef: dockerregistryconnector
+                        repo: mylesg655/design-libraries
+                        tags:
+                          - cartservice<+pipeline.executionId>
+                        dockerfile: /microservices-demo/src/cartservice/src/Dockerfile
+                        context: ./microservices-demo/src/cartservice/src/
