@@ -40,7 +40,7 @@ pipeline:
                         connectorRef: dockerregistryconnector
                         repo: mylesg655/design-libraries
                         tags:
-                          - adservice<+pipeline.executionId>
+                          - adservice-<+pipeline.executionId>
                         dockerfile: ./microservices-demo/src/adservice/Dockerfile
                         context: ./microservices-demo/src/adservice/
                   - step:
@@ -51,6 +51,6 @@ pipeline:
                         connectorRef: dockerregistryconnector
                         repo: mylesg655/design-libraries
                         tags:
-                          - cartservice<+pipeline.executionId>
+                          - cartservice-<+pipeline.executionId>
                         dockerfile: ./microservices-demo/src/cartservice/src/Dockerfile
                         context: ./microservices-demo/src/cartservice/src/
