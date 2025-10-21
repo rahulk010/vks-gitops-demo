@@ -54,3 +54,113 @@ pipeline:
                           - cartservice-<+pipeline.executionId>
                         dockerfile: ./microservices-demo/src/cartservice/src/Dockerfile
                         context: ./microservices-demo/src/cartservice/src/
+                  - step:
+                      type: BuildAndPushDockerRegistry
+                      name: BuildAndPushDockerRegistry_3
+                      identifier: BuildAndPushDockerRegistry_3
+                      spec:
+                        connectorRef: dockerregistryconnector
+                        repo: mylesg655/design-libraries
+                        tags:
+                          - checkoutservice-<+pipeline.executionId>
+                        dockerfile: ./microservices-demo/src/checkoutservice/Dockerfile
+                        context: ./microservices-demo/src/checkoutservice/
+                  - step:
+                      type: BuildAndPushDockerRegistry
+                      name: BuildAndPushDockerRegistry_4
+                      identifier: BuildAndPushDockerRegistry_4
+                      spec:
+                        connectorRef: dockerregistryconnector
+                        repo: mylesg655/design-libraries
+                        tags:
+                          - currencyservice-<+pipeline.executionId>
+                        dockerfile: ./microservices-demo/src/currencyservice/Dockerfile
+                        context: ./microservices-demo/src/currencyservice/
+                  - step:
+                      type: BuildAndPushDockerRegistry
+                      name: BuildAndPushDockerRegistry_5
+                      identifier: BuildAndPushDockerRegistry_5
+                      spec:
+                        connectorRef: dockerregistryconnector
+                        repo: mylesg655/design-libraries
+                        tags:
+                          - emailservice-<+pipeline.executionId>
+                        dockerfile: ./microservices-demo/src/emailservice/Dockerfile
+                        context: ./microservices-demo/src/emailservice/
+                  - step:
+                      type: BuildAndPushDockerRegistry
+                      name: BuildAndPushDockerRegistry_6
+                      identifier: BuildAndPushDockerRegistry_6
+                      spec:
+                        connectorRef: dockerregistryconnector
+                        repo: mylesg655/design-libraries
+                        tags:
+                          - frontend-<+pipeline.executionId>
+                        dockerfile: ./microservices-demo/src/frontend/Dockerfile
+                        context: ./microservices-demo/src/frontend/
+                  - step:
+                      type: BuildAndPushDockerRegistry
+                      name: BuildAndPushDockerRegistry_7
+                      identifier: BuildAndPushDockerRegistry_7
+                      spec:
+                        connectorRef: dockerregistryconnector
+                        repo: mylesg655/design-libraries
+                        tags:
+                          - loadgenerator-<+pipeline.executionId>
+                        dockerfile: ./microservices-demo/src/loadgenerator/Dockerfile
+                        context: ./microservices-demo/src/loadgenerator/
+                  - step:
+                      type: BuildAndPushDockerRegistry
+                      name: BuildAndPushDockerRegistry_8
+                      identifier: BuildAndPushDockerRegistry_8
+                      spec:
+                        connectorRef: dockerregistryconnector
+                        repo: mylesg655/design-libraries
+                        tags:
+                          - paymentservice-<+pipeline.executionId>
+                        dockerfile: ./microservices-demo/src/paymentservice/Dockerfile
+                        context: ./microservices-demo/src/paymentservice/
+                  - step:
+                      type: BuildAndPushDockerRegistry
+                      name: BuildAndPushDockerRegistry_9
+                      identifier: BuildAndPushDockerRegistry_9
+                      spec:
+                        connectorRef: dockerregistryconnector
+                        repo: mylesg655/design-libraries
+                        tags:
+                          - productcatalogservice-<+pipeline.executionId>
+                        dockerfile: ./microservices-demo/src/productcatalogservice/Dockerfile
+                        context: ./microservices-demo/src/productcatalogservice/
+                  - step:
+                      type: BuildAndPushDockerRegistry
+                      name: BuildAndPushDockerRegistry_10
+                      identifier: BuildAndPushDockerRegistry_10
+                      spec:
+                        connectorRef: dockerregistryconnector
+                        repo: mylesg655/design-libraries
+                        tags:
+                          - recommendationservice-<+pipeline.executionId>
+                        dockerfile: ./microservices-demo/src/recommendationservice/Dockerfile
+                        context: ./microservices-demo/src/recommendationservice/
+                  - step:
+                      type: BuildAndPushDockerRegistry
+                      name: BuildAndPushDockerRegistry_11
+                      identifier: BuildAndPushDockerRegistry_11
+                      spec:
+                        connectorRef: dockerregistryconnector
+                        repo: mylesg655/design-libraries
+                        tags:
+                          - shippingservice-<+pipeline.executionId>
+                        dockerfile: ./microservices-demo/src/shippingservice/Dockerfile
+                        context: ./microservices-demo/src/shippingservice/
+                  - step:
+                      type: BuildAndPushDockerRegistry
+                      name: BuildAndPushDockerRegistry_12
+                      identifier: BuildAndPushDockerRegistry_12
+                      spec:
+                        connectorRef: dockerregistryconnector
+                        repo: mylesg655/design-libraries
+                        tags:
+                          - shoppingassistantservice<+pipeline.executionId>
+                        dockerfile: ./microservices-demo/src/shoppingassistantserviceDockerfile
+                        context: ./microservices-demo/src/shoppingassistantservice/
