@@ -164,3 +164,20 @@ pipeline:
                           - shoppingassistantservice<+pipeline.executionId>
                         dockerfile: ./microservices-demo/src/shoppingassistantserviceDockerfile
                         context: ./microservices-demo/src/shoppingassistantservice/
+              - step:
+                  type: Run
+                  name: update-helm-values-file
+                  identifier: updatehelmvaluesfile
+                  spec:
+                    shell: Bash
+                    command: |-
+                      cd ./helm-charts
+                      echo "updating values.yaml file pipeline executionId"
+                      sed -i "s/{{ .Values.executionId }}/<+pipeline.executionId>/g" values.yaml
+                      git config user.name "rahulk10-vmware"
+                      git add helm-charts/values.yaml
+                      git commit -m "updating values.yaml file with executionId: <+pipeline.executionId>"
+                      git push origin <+pipeline.branch>
+                    envVariables:
+                      GIT_USERNAME: rahulk010
+                      GIT_PASSWORD: <+secrets.getValue("github-pat-token")>
