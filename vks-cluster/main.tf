@@ -35,7 +35,7 @@ resource "kubernetes_manifest" "vm" {
         }
       }
       "topology" = {
-        "class" = "builtin-generic-v3.3.0"
+        "class" = "builtin-generic-v3.4.0"
         "controlPlane" = {
           "replicas" = 1
         }
