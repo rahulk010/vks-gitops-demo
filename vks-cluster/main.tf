@@ -75,7 +75,7 @@ resource "kubernetes_manifest" "vm" {
             {
               "class"    = "node-pool"
               "name"     = "demo-node-pool"
-              "replicas" = 3
+              "replicas" = 1
             },
           ]
         }
